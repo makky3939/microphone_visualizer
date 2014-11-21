@@ -60,7 +60,7 @@ gulp.task 'watch', ->
 ## Tasks
 # Build Task
 gulp.task 'build', -> 
-  sequence 'clean', ['bower', 'copy', 'sass', 'coffee', 'jade']
+  sequence 'clean', ['copy', 'sass', 'coffee', 'jade']
 
 # Develop Task
 gulp.task 'server', ->
