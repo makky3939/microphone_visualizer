@@ -1,4 +1,3 @@
-bower      = require 'bower'
 gulp       = require 'gulp'
 prefixer   = require 'gulp-autoprefixer'
 clean      = require 'gulp-clean'
@@ -11,25 +10,6 @@ plumber    = require 'gulp-plumber'
 sass       = require 'gulp-ruby-sass'
 webserver  = require 'gulp-webserver'
 sequence   = require 'run-sequence'
-
-gulp.task 'bower', ->
-  bower.commands.install().on 'end', (installed) ->
-    gulp.src [
-      'bower_components/bootstrap/dist/fonts/*'
-      'bower_components/fontawesome/fonts/*'
-    ]
-      .pipe gulp.dest './dst/lib/fonts/'
-
-    gulp.src [
-      'bower_components/jquery/dist/jquery.min.js'
-      'bower_components/jquery/dist/jquery.min.map'
-    ]
-      .pipe gulp.dest './dst/lib/jquery/'
-
-    gulp.src [
-      'bower_components/fontawesome/css/font-awesome.min.css'
-    ]
-      .pipe gulp.dest './dst/lib/fontawesome/'
 
 gulp.task 'clean', ->
   gulp.src 'dst'
